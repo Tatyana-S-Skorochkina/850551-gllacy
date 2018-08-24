@@ -32,9 +32,9 @@
         <li class="site-navigation-item"><a class="site-link" href="about.html">О компании</a></li>
       </ul>
       <ul class="user-navigation">
-        <li class="search-button"><span>Поиск</span></li>
-        <li class="login-button"><span>Вход</span></li>
-        <li class="basket-button"><a>Пусто</a></li>
+        <li <button class="search-button" type="button" aria-label="Поиск по сайту">Поиск</button></li>
+        <li <button class="login-button" type="button" aria-label="Войти в личный кабинет">Вход</button></li>
+        <li class="basket-button" aria-label="Перейти в корзину"><a>Пусто</a></li>
       </ul>
     </nav>
     <div class="call-for-order">
@@ -93,25 +93,25 @@
           <h3 class="products-name"><a class="products-link" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
           <div class="products-image"><img src="img/catalog/orange.jpg" width="200" height="200" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой"></div>
           <p class="price price-preview">310 р<span class="weight">/кг</span></p>
-          <span class="products-preview-button">Быстрый просмотр</span>
+          <button class="products-preview-button" type="button">Быстрый просмотр</button>
         </li>
         <li class="products-item products-item-hit">
           <h3 class="products-name"><a class="products-link" href="#">Сливочно-кофейное с кусочками шоколада</a></h3>
           <div class="products-image"><img src="img/catalog/coffee.jpg" width="200" height="200" alt="Сливочно-кофейное с кусочками шоколада"></div>
           <p class="price price-preview">380 р<span class="weight">/кг</span></p>
-          <span class="products-preview-button">Быстрый просмотр</span>
+          <button class="products-preview-button" type="button">Быстрый просмотр</button>
         </li>
         <li class="products-item products-item-hit">
           <h3 class="products-name"><a class="products-link" href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></h3>
           <div class="products-image"><img src="img/catalog/strawberry.jpg" width="200" height="200" alt="Сливочно-клубничное с присыпкой из белого шоколада"></div>
           <p class="price price-preview">355 р<span class="weight">/кг</span></p>
-          <span class="products-preview-button">Быстрый просмотр</span>
+          <button class="products-preview-button" type="button">Быстрый просмотр</button>
         </li>
         <li class="products-item products-item-hit">
           <h3 class="products-name"><a class="products-link" href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
           <div class="products-image"><img src="img/catalog/caramel.jpg" width="200" height="200" alt="Сливочное крем-брюле с карамельной подливкой"></div>
           <p class="price price-preview">415 р<span class="weight">/кг</span></p>
-          <span class="products-preview-button">Быстрый просмотр</span>
+          <button class="products-preview-button" type="button">Быстрый просмотр</button>
         </li>
       </ul>
     </section>
@@ -144,7 +144,11 @@
     <section class="subscription">
       <h2 class="visually-hidden">Рассылка</h2>
       <p class="subscription-definition">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-      <!-- Здесь будет форма -->
+      <form class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
+        <label class="visually-hidden" for="subscription-email">Электронная почта</label>
+          <input class="subscription-field" type="text" name="email" id="subscription-email" aria-label="Введите адрес электронной почты" placeholder="Электронная почта">
+        <input class="subscription-button" type="submit" name="subscription" value="Отправить" aria-label="Подписаться на рассылку">
+      </form>
     </section>
 
     <section class="contacts background-image-contacts">
@@ -159,15 +163,15 @@
   </main>
   <footer class="main-footer">
     <div class="footer-social">
-      <ul class="footer-social-list">
-        <li class="footer-social-item"><a class="social-button" href="#">Твиттер</a></li>
-        <li class="footer-social-item"><a class="social-button" href="#">Инстаграм</a></li>
-        <li class="footer-social-item"><a class="social-button" href="#">Фейсбук</a></li>
-        <li class="footer-social-item"><a class="social-button" href="#">Вконтакте</a></li>
+      <ul class="footer-social-list" aria-label="Социальные сети">
+        <li class="footer-social-item"><a class="social-button" href="#" aria-label="Следите за нами в Твиттере">Твиттер</a></li>
+        <li class="footer-social-item"><a class="social-button" href="#" aria-label="Следите за нами в Инстаграме">Инстаграм</a></li>
+        <li class="footer-social-item"><a class="social-button" href="#" aria-label="Следите за нами в Фейсбуке">Фейсбук</a></li>
+        <li class="footer-social-item"><a class="social-button" href="#" aria-label="Следите за нами во ВКонтакте">Вконтакте</a></li>
       </ul>
     </div>
 
-    <div class="footer-menu">
+    <div class="footer-menu" aria-label="Дополнительное меню">
       <ul class="footer-menu-list">
         <li class="footer-menu-item"><a class="footer-menu-link" href="#">Для поставщиков</a></li>
         <li class="footer-menu-item"><a class="footer-menu-link" href="#">О производстве</a></li>
@@ -184,19 +188,38 @@
 
   <section class="modal modal-login">
     <h2 class="visually-hidden">Личный кабинет</h2>
-    <!-- Здесь будет форма -->
+    <form class="modal-login-form" action="https://echo.htmlacademy.ru" method="post">
+      <label class="visually-hidden" for="login-email">Электронная почта</label>
+      <input class="login-form-field" type="text" name="login-form-email" id="login-email" placeholder="Электронная почта" aria-label="Введите адрес электронной почты"><br>
+      <label class="visually-hidden" for="login-password">Пароль</label>
+      <input class="login-form-field" type="password" name="login-form-password" id="login-password" placeholder="Пароль" aria-label="Введите пароль"><br>
+      <input class="login-form-button" type="submit" value="Войти" aria-label="Перейти в личный кабинет">
+    </form>
+    <a class="modal-login-link" href="#">Забыли пароль?</a><br>
+    <a class="modal-login-link" href="#">Новая регистрация</a>
   </section>
 
   <section class="modal modal-search">
     <h2 class="visually-hidden">Поиск</h2>
-    <!-- Здесь будет форма -->
+    <form class="modal-search-form" action="https://echo.htmlacademy.ru" method="post">
+      <label class="visually-hidden" for="search-field">Поиск</label>
+      <input class="search-form-field" type="text" name="search" id="search-field" placeholder="Что ищем?" aria-label="Введите ключевые слова поиска">
+    </form>
   </section>
 
   <section class="modal modal-feedback">
     <h2 class="visually-hidden">Обратная связь</h2>
     <p><b>Мы обязательно вам ответим!</b></p>
-    <!-- Здесь будет форма -->
-    <span class="modal-close">x</span>
+    <form class="modal-feedback-form" action="https://echo.htmlacademy.ru" method="post">
+      <label class="visually-hidden" for="feedback-name">Имя</label>
+      <input class="feedback-form-field" type="text" name="feedback-form-name" id="feedback-name" placeholder="Как вас зовут?" aria-label="Укажите своё имя"><br>
+      <label class="visually-hidden" for="feedback-email">Электронная почта</label>
+      <input class="feedback-form-field" type="text" name="feedback-form-email" id="feedback-email" placeholder="Ваша почта для ответа?" aria-label="Укажите адрес электронной почты"><br>
+      <label class="visually-hidden" for="feedback-comment">Комментарий</label>
+      <textarea class="feedback-form-text" name="feedback-form-comment" id="feedback-comment" rows="10" placeholder="Напишите что-нибудь..." aria-label="Оставьте свой комментарий"></textarea><br>
+      <input class="feedback-form-button" type="submit" value="Отправить">
+    </form>
+    <button class="modal-close" type="button">Закрыть</button>
   </section>
 </body>
 </html>
