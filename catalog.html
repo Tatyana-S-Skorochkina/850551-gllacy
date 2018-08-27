@@ -13,7 +13,7 @@
     <nav class="main-navigation" aria-label="Навигация по сайту">
       <ul class="site-navigation" aria-label="Главное меню">
         <li class="site-navigation-item">
-          <a class="site-link-current" href="#">Каталог</a>
+          <a class="site-link site-link-current" href="#">Каталог</a>
           <ul class="catalog-list">
             <li class="catalog-item">
               <b><a class="catalog-link" href="catalog.html?category=new">Новинки</a></b>
@@ -41,13 +41,68 @@
       </ul>
       <ul class="user-navigation" aria-label="Меню пользователя">
         <li class="user-navigation-item">
-          <button class="search-button">Поиск</button>
+          <button class="user-navigation-button search-button">Поиск</button>
+          <div class="details details-search">
+            <form class="details-search-form" action="https://echo.htmlacademy.ru" method="get">
+              <label class="visually-hidden" for="search-field">Поиск</label>
+              <input class="search-form-field" type="text" name="search" 
+              id="search-field" placeholder="Что ищем?">
+            </form>
+          </div>
         </li>
         <li class="user-navigation-item">
-          <a class="login-button" href="#">Вход</a>
+          <a class="user-navigation-button login-button" href="#">Вход</a>
+          <div class="details details-login">
+            <form class="details-login-form" action="https://echo.htmlacademy.ru" method="post">
+              <label class="visually-hidden" for="login-email">Электронная почта</label>
+              <input class="login-form-field" type="email" name="login-form-email" 
+              id="login-email" placeholder="Электронная почта"><br>
+              <label class="visually-hidden" for="login-password">Пароль</label>
+              <input class="login-form-field" type="password" name="login-form-password" 
+              id="login-password" placeholder="Пароль"><br>
+              <input class="login-form-button" type="submit" value="Войти" 
+              aria-label="Перейти в личный кабинет">
+            </form>
+            <a class="details-login-link" href="#">Забыли пароль?</a><br>
+            <a class="details-login-link" href="#">Новая регистрация</a>
+          </div>
         </li>
         <li class="user-navigation-item">
-          <a class="basket-button full-basket" href="#" aria-label="Корзина">2 товара</a>
+          <a class="user-navigation-button basket-button full-basket" href="#" aria-label="Корзина">2 товара</a>
+          <div class="details details-basket">
+            <table class="details-basket-preview">
+              <tr class="details-basket-row">
+                <td class="details-basket-col">
+                  <button class="details-basket-row-delete">Удалить</button>
+                </td>
+                <td class="details-basket-col">
+                  <img class="details-basket-row-picture" src="img/pl-orange.jpg" width="33" height="33" 
+                  alt="Пломбир с апельсиновым джемом">
+                </td>
+                <td class="details-basket-col">Пломбир с апельсиновым джемом</td>
+                <td class="details-basket-col">1,5 кг х <span class="basket-price">200 руб.</span></td>
+                <td class="details-basket-col" aria-label="Стоимость позиции">300 руб.</td>
+              </tr>
+              <tr class="details-basket-row">
+                <td class="details-basket-col">
+                  <button class="details-basket-row-delete">Удалить</button>
+                </td>
+                <td class="details-basket-col">
+                  <img class="details-basket-row-picture" src="img/pl-strawberry.jpg" width="33" height="33" 
+                  alt="Клубничный пломбир с присыпкой из белого шоколада">
+                </td>
+                <td class="details-basket-col">Клубничный пломбир с присыпкой из белого шоколада</td>
+                <td class="details-basket-col">1,5 кг х <span class="basket-price">300 руб.</span></td>
+                <td class="details-basket-col" aria-label="Стоимость позиции">450 руб.</td>
+              </tr>
+              <tr class="details-basket-row-summary">
+                <td class="details-basket-col-summary" colspan="5" aria-label="Общая стоимость заказа">
+                  <b class="details-basket-summary">Итого: 750 руб.</b>
+                </td>
+              </tr>
+            </table>
+            <a class="details-basket-button" href="#">Оформить заказ</a>
+          </div>
         </li>
       </ul>
     </nav>
@@ -65,12 +120,12 @@
       <li class="breadcrumbs-item">
         <a class="breadcrumbs-link" href="#">Каталог</a>
       </li>
-      <li class="breadcrumbs-current">Сливочное</li>
+      <li class="breadcrumbs-link">Сливочное</li>
     </ul>
 
     <section class="filters">
       <h2 class="visually-hidden">Фильтр товаров</h2>
-      <form class="filters-form" action="https://echo.htmlacademy.ru" method="post">
+      <form class="filters-form" action="https://echo.htmlacademy.ru" method="get">
         <fieldset class="filters-item filter-sort">
           <legend class="filters-name">Сортировка:</legend>
           <select class="sort-list" name="sort">
@@ -312,7 +367,7 @@
         <li class="pagination-item"><a class="pagination-link" href="#">3</a></li>
         <li class="pagination-item"><a class="pagination-link" href="#">4</a></li>
         <li class="pagination-item"><a class="pagination-link" href="#">5</a></li>
-        <li class="pagination-item"><a class="pagination-link" href="#">Ещё</a></li>
+        <li class="pagination-item"><a class="pagination-link pagination-icon" href="#">Ещё</a></li>
       </ul>
     </section>
   </main>
@@ -320,16 +375,16 @@
     <div class="footer-social">
       <ul class="footer-social-list" aria-label="Мы в социальных сетях">
         <li class="footer-social-item">
-          <a class="social-link" href="#">Твиттер</a>
+          <a class="footer-social-link" href="#">Твиттер</a>
         </li>
         <li class="footer-social-item">
-          <a class="social-link" href="#">Инстаграм</a>
+          <a class="footer-social-link" href="#">Инстаграм</a>
         </li>
         <li class="footer-social-item">
-          <a class="social-link" href="#">Фейсбук</a>
+          <a class="footer-social-link" href="#">Фейсбук</a>
         </li>
         <li class="footer-social-item">
-          <a class="social-link" href="#">Вконтакте</a>
+          <a class="footer-social-link" href="#">Вконтакте</a>
         </li>
       </ul>
     </div>
@@ -352,54 +407,12 @@
     </div>
 
     <div class="copyright" aria-label="Разработчик">
-      <div class="logo-htmlacademy">
-        <img src="img/svg/footer/logo-htmlacademy-small.svg" width="108" height="39" 
-        alt="Логотип HTML Academy">
-      </div>
+      <img class="logo-htmlacademy" src="img/svg/footer/logo-htmlacademy-small.svg" width="108" height="39" 
+      alt="Логотип HTML Academy">
       <p class="footer-copyright">Сделано в 
         <a class="footer-menu-link" href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> © 2017
       </p>
     </div>
   </footer>
-
-  <section class="modal modal-basket">
-    <h2 class="visually-hidden">Корзина</h2>
-    <table class="basket-preview">
-      <tr class="basket-row">
-        <td class="basket-col">
-          <button class="basket-row-delete">Удалить</button>
-        </td>
-        <td class="basket-col">
-          <span class="basket-row-picture">
-            <img src="img/pl-orange.jpg" width="33" height="33" 
-            alt="Пломбир с апельсиновым джемом">
-          </span>
-        </td>
-        <td class="basket-col">Пломбир с апельсиновым джемом</td>
-        <td class="basket-col">1,5 кг х <span class="basket-price">200 руб.</span></td>
-        <td class="basket-col" aria-label="Стоимость позиции">300 руб.</td>
-      </tr>
-      <tr class="basket-row">
-        <td class="basket-col">
-          <button class="basket-row-delete">Удалить</button>
-        </td>
-        <td class="basket-col">
-          <span class="basket-row-picture">
-            <img src="img/pl-strawberry.jpg" width="33" height="33" 
-            alt="Клубничный пломбир с присыпкой из белого шоколада">
-          </span>
-        </td>
-        <td class="basket-col">Клубничный пломбир с присыпкой из белого шоколада</td>
-        <td class="basket-col">1,5 кг х <span class="basket-price">300 руб.</span></td>
-        <td class="basket-col" aria-label="Стоимость позиции">450 руб.</td>
-      </tr>
-      <tr class="basket-row-summary">
-        <td class="basket-col-summary" colspan="5" aria-label="Общая стоимость заказа">
-          <b class="basket-summary">Итого: 750 руб.</b>
-        </td>
-      </tr>
-    </table>
-    <a class="basket-order-button" href="#">Оформить заказ</a>
-  </section>
 </body>
 </html>
