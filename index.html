@@ -40,7 +40,7 @@
       </ul>
       <ul class="user-navigation" aria-label="Меню пользователя">
         <li class="user-navigation-item">
-          <label class="user-navigation-button search-button" for="serch-send" role="button">Найти</label>
+          <label class="user-navigation-button search-button" for="serch-send" tabindex="0">Найти</label>
           <div class="details details-search">
             <form class="details-search-form" action="https://echo.htmlacademy.ru" method="get">
               <input class="search-form-field" type="text" name="search" 
@@ -73,13 +73,9 @@
         <li class="user-navigation-item">
           <a class="user-navigation-button basket-button" href="#" aria-label="Корзина">Пусто</a>
           <div class="details details-basket">
-            <table class="details-basket-preview">
-              <tr class="details-basket-row-summary">
-                <td class="details-basket-col-summary" colspan="5" aria-label="Общая стоимость заказа">
-                  <b class="details-basket-summary">Итого: 0 руб.</b>
-                </td>
-              </tr>
-            </table>
+            <p class="details-basket-preview" aria-label="Общая стоимость заказа">
+              <b class="details-basket-summary">Итого: 0 руб.</b>
+            </p>
             <a class="details-basket-button empty-basket" href="#">Оформить заказ</a>
           </div>
         </li>
