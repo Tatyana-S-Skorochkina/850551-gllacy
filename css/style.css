@@ -450,8 +450,9 @@ a {
 
 	margin-bottom: 40px;
 	min-height: 306px;
-	padding-top: 29px;
-	padding-left: 21px;
+	padding-top: 30px;
+	padding-left: 20px;
+	padding-bottom: 20px;
 }
 
 .advantages-title {
@@ -471,9 +472,9 @@ a {
 }
 
 .advantages-item {
-		width: 470px;
-		margin-left: 55px;
-		margin-right: 33px;
+		width: 563px;
+		padding-left: 56px;
+		padding-right: 33px; 
 }
 
 .news-subscription-column {
