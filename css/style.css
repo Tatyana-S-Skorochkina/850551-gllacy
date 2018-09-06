@@ -65,6 +65,7 @@ a {
 }
 
 .main-header {
+	position: relative;
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
@@ -73,6 +74,7 @@ a {
 .main-navigation {
 	display: flex;
 	justify-content: flex-start;
+	flex-grow: 1;
 	margin: 0;
 	padding: 0;
 	margin-left: 27px;
@@ -82,7 +84,9 @@ a {
 .site-navigation {
 	display: flex;
 	justify-content: flex-start;
-	width: 689px;
+	flex-grow: 1;
+	flex-wrap: wrap;
+	max-width: 700px;
 	margin: 0;
 	padding: 0;
 
@@ -173,6 +177,8 @@ a {
 .user-navigation {
 	display: flex;
 	justify-content: flex-end;
+	flex-grow: 1;
+	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
 }
@@ -462,7 +468,7 @@ a {
 .call-for-order {
 	position: absolute;
 	top: 60px;
-	left: 980px;
+	right: 27px;
 	z-index: -5;
 	font-weight: 700;
 	color: #ffffff;
