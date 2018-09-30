@@ -15,12 +15,14 @@ body {
 	line-height: 22px;
 	font-weight: 400;
 	color: #323232;
-
-	background-color: #849d8f;
 }
 
 a {
 	text-decoration: none;
+}
+
+.background {
+	background-color: #849d8f;
 }
 
 .container {
@@ -67,23 +69,27 @@ a {
 .main-header {
 	position: relative;
 	display: flex;
-	justify-content: flex-start;
 	align-items: flex-start;
+}
+
+.main-logo {
+	display: block;
+	margin: 0;
+	padding: 0;
+	margin-right: 10px;
 }
 
 .main-navigation {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	flex-grow: 1;
 	margin: 0;
 	padding: 0;
-	margin-left: 27px;
-	margin-top: 15px;
+	padding-top: 14px;
 }
 
 .site-navigation {
 	display: flex;
-	justify-content: flex-start;
 	flex-grow: 1;
 	flex-wrap: wrap;
 	max-width: 700px;
@@ -94,35 +100,48 @@ a {
 }
 
 .site-navigation-item {
-	line-height: 18px;
-	font-weight: 700;
-
-	padding-right: 27px;
-	padding-bottom: 10px;
+	padding: 8px 14px;
+	border-radius: 25px;
 }
 
 .site-link {
+	display: block;
+	line-height: 18px;
+	font-weight: 700;
 	color: #ffffff;
 	border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+	vertical-align: middle;
 }
 
-.site-link:hover,
-.site-link:focus {
-	color: #333333;
+.site-navigation-item:hover,
+.site-navigation-item:focus {
 	background-color: #f7f6f3;
 }
 
-.site-link:active {
-	color: #333333;
+.site-navigation-item:active {
 	background-color: #ededed;
+	box-shadow: inset 0px 2px 1px 0 #696969;
+}
+
+.site-navigation-item:hover a,
+.site-navigation-item:focus a,
+.site-navigation-item:active a {
+	color: #333333;
 }
 
 .site-link-current,
 .site-link-current:hover,
 .site-link-current:focus,
 .site-link-current:active {
-	color: #ffffff;
 	background-color: #d07058;
+}
+
+.site-link-current > a,
+.site-link-current:hover > a,
+.site-link-current:focus > a,
+.site-link-current:active > a {
+	color: #ffffff;
+	border-bottom: solid 1px #d07058;
 }
 
 .site-navigation > li:first-child:hover .catalog-list,
@@ -130,31 +149,59 @@ a {
 	display: block;
 }
 
-.catalog-list {
+.details {
 	background-color: #f8f7f4;
 	box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.catalog-list {
 	border-radius: 5px;
 
+	min-width: 143px;
 	margin: 0;
 	padding: 0;
 
 	position: absolute;
-	top: 30px;
-	left: -21px;
+	top: 40px;
+	left: -7px;
 
+}
+
+.catalog-list::before {
+	content: "";
+	width: 100%;
+	height: 10px;
+	position: absolute;
+	left: 0px;
+	top: -10px;
 }
 
 .catalog-item {
-	padding: 0 20px;
-	padding-top: 12px;
-	padding-bottom: 13px;
+	padding: 0 7px;
+}
+
+.catalog-item:last-child {
+	padding-bottom: 14px;
+}
+
+.catalog-item:first-child {
+	padding-top: 13px;
 }
 
 .catalog-link {
+	display: block;
+	padding: 7px 14px;
 	font-size: 14px;
 	line-height: 16px;
 	font-weight: 400;
 	color: #323232;
+}
+
+.catalog-item:first-child > .catalog-link {
+	padding-top: 0px;
+	padding-bottom: 13px;
+	border-bottom: 1px solid rgba(50, 50, 50, 0.2);
+	margin-bottom: 5px;
 }
 
 .catalog-item:hover,
@@ -181,12 +228,20 @@ a {
 	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
+
+	position: relative;
 }
 
 .user-navigation-item {
 	position: relative;
-	padding-left: 27px;
-	padding-bottom: 10px;
+	padding-top: 6px;
+	padding-left: 16px;
+	padding-right: 17px;
+	padding-bottom: 7px;
+
+	border-radius: 25px;
+	background-color: rgba(255, 255, 255, 0.2);
+	margin-left: 8px;
 }
 
 .user-navigation > li:first-child:hover .details-search,
@@ -205,45 +260,97 @@ a {
 }
 
 .user-navigation-button {
+	display: block;
 	font-size: 14px;
 	line-height: 16px;
 	font-weight: 500;
 	color: #ffffff;
-
-	background-color: #a1b4a9;
+	vertical-align: middle;
 }
 
-.user-navigation-button:hover,
-.user-navigation-button:focus {
+.user-navigation-item:hover,
+.user-navigation-item:focus {
 	color: #323232;
 	background-color: #f8f7f4;
+}
+
+.user-navigation-item:hover a,
+.user-navigation-item:focus a {
+	color: #323232;
+}
+
+.search-button {
+	width: 33px;
+	padding: 0;
+	padding-top: 7px;
+	padding-left: 8px;
+}
+
+.search-button:hover path,
+.search-button:focus path {
+	fill: #323232;
+}
+
+.login-button {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.login-button-name {
+	padding-left: 7px;
+}
+
+.user-navigation-item:hover .login-button path,
+.user-navigation-item:focus .login-button path,
+.user-navigation-item:hover .login-button polygon,
+.user-navigation-item:focus .login-button polygon {
+	fill: #323232;
+}
+
+.basket-button {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.basket-button-name {
+	padding-left: 7px;
+}
+
+.user-navigation-item:hover .basket-button path,
+.user-navigation-item:focus .basket-button path,
+.user-navigation-item:hover .basket-button circle,
+.user-navigation-item:focus .basket-button circle {
+	fill: #323232;
 }
 
 .full-basket {
-	color: #323232;
 	background-color: rgba(248, 247, 244, 0.99);
 }
 
-.details {
-	background-color: #f8f7f4;
-	box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
+.full-basket > a {
+	color: #323232;
 }
 
 .details-search {
 	position: absolute;
-	top: 30px;
-	left: -270px;
+	right: 0;
+	top: 38px;
 	width: 341px;
   border-radius: 5px;
   padding: 20px 15px;
 }
 
+
 .details-login {
 	position: absolute;
-	top: 30px;
-	left: -200px;
+	right: 0;
+	top: 38px;
 	width: 277px;
-  border-radius: 5.1px;
+  border-radius: 5px;
   padding: 20px 0;
   padding-left: 19px;
   padding-right: 17px;
@@ -252,11 +359,33 @@ a {
 .details-basket {
 	position: absolute;
 	background-color: #f8f7f4;
-	top: 30px;
-	left: -450px;
+	right: 0;
+	top: 38px;
 	width: 540px;
   border-radius: 5px;
-  padding: 20px 15px;
+  padding-left: 16px;
+  padding-right: 14px;
+  padding-top: 26px;
+  padding-bottom: 12px;
+}
+
+.details-search::before,
+.details-login::before,
+.details-basket::before {
+	content: "";
+	width: 100%;
+	height: 10px;
+	position: absolute;
+	left: 0px;
+	top: -10px;
+}
+
+.details-basket-preview {
+	width: 510px;
+	padding: 0;
+	padding-top: 15px;
+	text-align: right;
+	border-top: 1px solid #cacac7;
 }
 
 .details-basket-col {
@@ -298,11 +427,11 @@ a {
 }
 
 .form-field:hover {
-	border: solid 2px rgba(154, 154, 154, 0.52);
+	box-shadow: 0 0 2px 0 rgba(154, 154, 154, 0.52);
 }
 
 .form-field:focus {
-	border: solid 2px rgba(46, 136, 228, 0.52);
+	box-shadow: 0 0 2px 0 rgba(46, 136, 228, 0.52);
 }
 
 .search-form-field,
@@ -322,26 +451,29 @@ a {
 	line-height: 24px;
 	font-weight: 700;
 	color: #fefefe;
+	text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
 
-	background-color: #e95139;
+	background: #f26843;
+  background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
 	box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
 	border: none;
-	border-radius: 20px;
+	border-radius: 25px;
+
 }
 
 .button:hover,
 .button:focus {
-	background-color: #ee7561;
-	box-shadow: 0px 2px 2px 0 #ac1000;
+	background: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
 }
 
 .button:active {
-	background-color: #dd563a;
-	box-shadow: inset 0px 2px 2px 0 #942718;
+	background: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0 2px 2px rgba(172, 16, 0, 1);
 }
 
 .login-form-button {
-	padding: 12px 25px;
+	padding: 10px 25px;
 	margin-right: 20px;
 }
 
@@ -350,11 +482,12 @@ a {
 	justify-content: space-between;
 }
 
+/* Не понимаю, почему текст кнопки черный...*/
 .details-basket-button {
-	display: block;
+	display: inline-block;
 	padding: 10px 15px;
-	margin-left: 335px;
-	margin-bottom: 21px;
+	float: right;
+	color: #fefefe;
 }
 
 .offer-list {
@@ -413,26 +546,27 @@ a {
 }
 
 .banner-item {
+	position: relative;
 	width: 560px;
 	min-height: 229px;
 	padding: 20px;
+	padding-bottom: 23px;
+	border-radius: 15px;
 }
 
-.banner-item:nth-child(2n) {
-	margin-left: 26px;
+.banner-item:first-child {
+	margin-right: 26px;
 }
 
 .banner-button {
+	position: absolute;
+	right: 21px;
+	bottom: 23px;
 	font-size: 18.5px;
 	line-height: 24.5px;
 	text-align: center;
 	color: #ffffff;
-	box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
-}
-
-.banner-button:hover,
-.banner-button:focus {
-	box-shadow: 0px 1px 2px 0 #ac1000;
+	padding: 14px 22px;
 }
 
 .link-white {
@@ -467,7 +601,7 @@ a {
 
 .call-for-order {
 	position: absolute;
-	top: 60px;
+	top: 70px;
 	right: 27px;
 	z-index: -5;
 	font-weight: 700;
@@ -527,6 +661,7 @@ a {
 }
 
 .products-item {
+	position: relative;
 	width: 267px;
 	margin-right: 26px;
 }
@@ -535,8 +670,55 @@ a {
 	margin-right: 0;
 }
 
+.products-item::after {
+	position: absolute;
+	top: -6px;
+	right: -13px;
+	content: "";
+	width: 293px;
+  height: 405px;
+  background-color: #f8f7f4;
+  opacity: 0.2;
+  box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4); 
+  border-radius: 5px;
+  z-index: 1;
+  display: none;
+}
+
+.products-preview-button {
+	position: absolute;
+	left: 30px;
+	bottom: -15px;
+	padding: 10px 17px;
+	z-index: 2;
+	display: none;
+}
+
+.products-item:hover::after,
+.products-item:focus::after,
+.products-item:hover .products-preview-button,
+.products-item:focus .products-preview-button {
+	display: block;
+}
+
+/* Как сделать так, чтобы текущий товар был сверху, а все остальные снизу по слоям?? */
+.products-item:hover,
+.products-item:focus {
+	z-index: 5;
+}
+
+.products-item-hit::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 61px;
+	height: 61px;  
+	background-image: url("../img/svg/label-hit.svg"); 
+}
+
 .products-image {
-	margin-bottom: 2px;
+	margin-bottom: 15px;
 	border-radius: 50%;
 	overflow: hidden;
 }
@@ -554,10 +736,16 @@ a {
 }
 
 .products-name {
+	margin: 0;
+	padding: 0;
 	text-align: center;
+	margin-bottom: 40px;
 }
 
 .price {
+	position: absolute;
+	left: 0;
+	bottom: 65px;
 	font-size: 45px;
 	line-height: 45px;
 	font-weight: 500;
@@ -568,8 +756,8 @@ a {
 	font-size: 30px;
 }
 
-
 .advantages {
+	position: relative;
 	background-color: #e8dec6;
 	background-image: url("../img/advantages.jpg");
 
@@ -578,6 +766,51 @@ a {
 	padding-top: 25px;
 	padding-left: 20px;
 	padding-bottom: 20px;
+	border-radius: 15px;
+}
+
+.advantages-icon-icecreame {
+	position: absolute;
+	left: 20px;
+	top: 93px;
+	content: "";
+	width: 49px;
+	height: 49px;
+	background-image: url("../img/svg/ice-cream.svg");
+	background-repeat: no-repeat;
+}
+
+.advantages-icon-cow {
+	position: absolute;
+	left: 585px;
+	top: 93px;
+	content: "";
+	width: 49px;
+	height: 49px;
+	background-image: url("../img/svg/cow.svg");
+	background-repeat: no-repeat;
+}
+
+.advantages-icon-leaf {
+	position: absolute;
+	left: 20px;
+	top: 181px;
+	content: "";
+	width: 49px;
+	height: 49px;
+	background-image: url("../img/svg/leaf.svg");
+	background-repeat: no-repeat;
+}
+
+.advantages-icon-thermometer {
+	position: absolute;
+	left: 585px;
+	top: 181px;
+	content: "";
+	width: 49px;
+	height: 49px;
+	background-image: url("../img/svg/thermometer.svg");
+	background-repeat: no-repeat;
 }
 
 .advantages-title {
@@ -613,12 +846,19 @@ a {
 	width: 560px;
 	min-height: 220px;
 	padding: 0;
+	margin: 0;
+	border-radius: 15px;
 }
 
 .news {
 	background-color: rgba(255, 255, 255, 0.8);
 	background-image: url("../img/image-news.jpg");
 	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top right;
+	padding-top: 23px;
+	padding-left: 20px;
+
 }
 
 .news-title {
@@ -629,13 +869,14 @@ a {
 }
 
 .news-link {
+	display: inline-block;
+	max-width: 290px;
 	font-size: 24px;
 	line-height: 30px;
 	font-weight: 700;
 	color: #323232;
 	text-decoration: underline;
 	border: none;
-	background-color: rgba(255, 255, 255, 0.8);
 }
 
 .news-link:hover,
@@ -645,25 +886,41 @@ a {
 }
 
 .subscription {
+	position: relative;
 	background-color: #f8f7f4;
 	background-image: url("../img/subscription_background.jpg");
 	background-repeat: no-repeat;
 }
 
 .subscription-area {
+	position: absolute;
+	top: 5px;
+	left: 5px;
 	background-color: #f8f7f4;
 	width: 549px;
 	min-height: 211px;
-	margin: 5.5px;
+	border-radius: 10px;
+	padding: 0;
+	margin: 0;
+	padding-top: 30px;
+	padding-left: 21px;
+	padding-right: 22px;
 }
 
 .subscription-definition {
+	padding: 0;
+	margin: 0;
 	color: #5a5a5a;
-	margin-left: 21px;
-	margin-right: 22px;
 }
 
 .subscription-field {
+	padding: 0;
+	margin: 0;
+	margin: 35px 0;
+	padding-left: 15px;
+	padding-top: 15px;
+	padding-bottom: 13px;
+	width: 368px;
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 400;
@@ -672,6 +929,17 @@ a {
 	border-style: none;
 	border: 1px #d3d3d2;
 	border-radius: 3px;
+}
+
+.subscription-button {
+	margin-top: 35px;
+	padding: 10px 19px;
+	padding-top: 11px;
+	float: right;
+}
+
+.contacts {
+	position: relative;
 }
 
 .contacts-map {
@@ -685,32 +953,53 @@ a {
 }
 
 .contacts-info {
+	position: absolute;
+	right: 0;
+	top: 63px;
 	background-color: #ffffff;
 	border-radius: 15px;
 
 	width: 302px;
 	min-height: 305px;
 	padding-left: 25px;
+	padding-top: 30px;
 }
 
 .contacts-text {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 3px;
 	font-size: 14px;
 	line-height: 20px;
 }
 
-.contacts-text-schedule {
-	font-size: 14px;
-	line-height: 22px;
-}
-
 .contacts-text-bold {
+	width: 220px;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 15px;
 	font-size: 18px;
 	line-height: 24px;
 }
 
 .contacts-text-phone {
+	padding: 0;
+	margin: 0;
+	margin-top: 6px;
 	font-size: 18px;
 	line-height: 22px;
+}
+
+.contacts-text-schedule {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 30px;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.feedback-button {
+	padding: 10px 28px;
 }
 
 .main-footer {
@@ -730,10 +1019,12 @@ a {
 }
 
 .footer-social-item {
-	border: 2px solid rgba(255, 255, 255, 0.5);
+	width: 38px;
+	height: 38px;
+	border: 3px solid rgba(255, 255, 255, 0.5);
 	background-color: rgba(255, 255, 255, 0.8);
-
 	margin-right: 11px;
+	border-radius: 50%;
 }
 
 .footer-social-item:hover,
@@ -745,10 +1036,31 @@ a {
 	background-color: rgba(255, 255, 255, 0.7);
 }
 
+/* картинки соцсетей не подгружаются...*/
+.social-link-twitter {
+	width: 32px;
+	height: 32px;
+	background-image: url("../img/svg/footer/twitter.svg");
+	background-repeat: no-repeat; 
+	background-position: 0 0;
+}
+
 .footer-menu {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	width: 560px;
+}
+
+.footer-menu-list::before {
+	position: absolute;
+	top: 21px;
+	left: 122px;
+	content: "";
+	width: 15px;
+	height: 13px;
+	background-image: url("../img/svg/footer/heart.svg");
+	background-repeat: no-repeat;
 }
 
 .footer-menu-link {
