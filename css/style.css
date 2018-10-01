@@ -182,10 +182,6 @@ a {
 	padding-bottom: 7px;
 }
 
-.catalog-item:first-child {
-	padding-top: 12px;
-}
-
 .catalog-link {
 	display: block;
 	padding: 7px 14px;
@@ -196,10 +192,10 @@ a {
 }
 
 .novelty .catalog-link {
-	padding-top: 0px;
-	padding-bottom: 13px;
+	padding-top: 11px;
+	padding-bottom: 11px;
 	border-bottom: 1px solid rgba(50, 50, 50, 0.2);
-	margin-bottom: 5px;
+	margin-bottom: 4px;
 }
 
 .catalog-item:hover,
@@ -650,7 +646,7 @@ a {
   opacity: 0.2;
   box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4); 
   border-radius: 5px;
-  z-index: 1;
+  z-index: -1;
   display: none;
 }
 
@@ -659,7 +655,7 @@ a {
 	left: 30px;
 	bottom: -15px;
 	padding: 10px 17px;
-	z-index: 2;
+	z-index: 1;
 	display: none;
 }
 
@@ -670,10 +666,9 @@ a {
 	display: block;
 }
 
-/* Как сделать так, чтобы текущий товар был сверху, а все остальные снизу по слоям?? */
 .products-item:hover,
 .products-item:focus {
-	z-index: 5;
+	z-index: 1;
 }
 
 .products-item-hit::before {
