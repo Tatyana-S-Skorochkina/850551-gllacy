@@ -308,6 +308,8 @@ a {
 }
 
 .details {
+	padding: 0;
+	margin: 0;
 	position: absolute;
 	right: 0;
 	top: 38px;
@@ -327,11 +329,13 @@ a {
 }
 
 .details-basket {
+	padding: 0;
+	margin: 0;
 	width: 540px;
   padding-left: 16px;
   padding-right: 14px;
-  padding-top: 26px;
-  padding-bottom: 12px;
+  padding-top: 10px;
+  padding-bottom: 21px;
   background-color: #f8f7f4;
 }
 
@@ -349,24 +353,99 @@ a {
 .details-basket-preview {
 	width: 510px;
 	padding: 0;
-	padding-top: 15px;
-	text-align: right;
-	border-top: 1px solid #cacac7;
+	margin: 0;
+	border-bottom: 1px solid #cacac7;
+}
+
+.details-basket-row {
+	padding: 0;
+	margin: 0;
 }
 
 .details-basket-col {
+	padding: 0;
+	margin: 0;
+	padding: 10px 0;
 	font-size: 13px;
 	line-height: 16px;
+	vertical-align: top;
+
+}
+
+.details-basket-col-delete {
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	padding-bottom: 12px;
+}
+
+.details-basket-row-delete {
+	position: relative;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	margin-right: 14px;
+}
+
+.details-basket-row-delete::before {
+	position: absolute;
+	top: 4px;
+	left: -2px;
+	content: "";
+	border: 0;
+	width: 15px;
+	height: 2px;
+	background-color: #231F20;
+	transform: rotate(45deg);
+}
+
+.details-basket-row-delete::after {
+	position: absolute;
+	top: 4px;
+	left: -2px;
+	content: "";
+	border: 0;
+	width: 15px;
+	height: 2px;
+	background-color: #231F20;
+	transform: rotate(-45deg);
+}
+
+.details-basket-row-picture {
+	margin: 0;
+	background-color: #999999;
+	border-radius: 50%;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.details-basket-col-name {
+	width: 220px;
+	padding-top: 20px;
+	margin-right: 13px;
+}
+
+.details-basket-col-price {
+	padding: 0 15px;
+	padding-top: 20px;
+	margin-right: 14px;
 }
 
 .basket-price {
 	color: #999999;
 }
 
+.details-basket-col-total {
+	padding: 0 15px;
+	padding-top: 20px;
+}
+
 .details-basket-summary {
 	font-size: 15px;
 	line-height: 18px;
 	font-weight: 700;
+	text-align: right;
 	color: #323232;
 }
 
@@ -682,9 +761,12 @@ a {
 }
 
 .products-image {
+	width: 267px;
+	height: 267px;
 	margin-bottom: 15px;
 	border-radius: 50%;
 	overflow: hidden;
+	background-color: #999999;
 }
 
 .products-image img {
