@@ -25,9 +25,17 @@ a {
 	background-color: #849d8f;
 }
 
+/* Как задать градиент не поняла ((...
+.background-gradient {
+	display: block;
+	width: 100%;
+	height: 656px;
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+}
+*/
+
 .container {
 	width: 1200px;
-	background-color: rgba(255, 255, 255, 0.2);
 	padding: 0 27px;
 	padding-top: 9px;
 	padding-bottom: 33px;
@@ -70,6 +78,7 @@ a {
 	position: relative;
 	display: flex;
 	align-items: flex-start;
+	z-index: 1;
 }
 
 .main-logo {
@@ -381,25 +390,18 @@ a {
 
 .details-basket-row-delete {
 	position: relative;
+	width: 11px;
+	height: 11px;
 	border: 0;
 	padding: 0;
-	margin: 0;
 	font-size: 0;
-	margin-right: 14px;
+	margin-top: 10px;
+	margin-right: 8px;
+	background-color: transparent;
+	cursor: pointer;
 }
 
-.details-basket-row-delete::before {
-	position: absolute;
-	top: 4px;
-	left: -2px;
-	content: "";
-	border: 0;
-	width: 15px;
-	height: 2px;
-	background-color: #231F20;
-	transform: rotate(45deg);
-}
-
+.details-basket-row-delete::before,
 .details-basket-row-delete::after {
 	position: absolute;
 	top: 4px;
@@ -409,6 +411,13 @@ a {
 	width: 15px;
 	height: 2px;
 	background-color: #231F20;
+}
+
+.details-basket-row-delete::before {
+	transform: rotate(45deg);
+}
+
+.details-basket-row-delete::after {
 	transform: rotate(-45deg);
 }
 
@@ -537,6 +546,13 @@ a {
 	color: #fefefe;
 }
 
+.offer {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	margin-top: -120px;
+}
+
 .offer-list {
 	margin: 0;
 	padding: 0;
@@ -555,9 +571,8 @@ a {
 .offer-item-picture {
 	position: absolute;
 	top: 0px;
-	z-index: -3;
+	z-index: -1;
 }
-
 
 .offer-item-title {
 	font-size: 60px;
@@ -569,7 +584,7 @@ a {
 	padding: 0 60px;
 	margin-bottom: 29px;
 	text-align: center;
-	margin-top: 270px;
+	margin-top: 380px;
 }
 
 .offer-item-button {
@@ -580,8 +595,35 @@ a {
 	box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
 	border-radius: 50px;
 
-	margin-top: 0;
+	margin: 0;
+	margin-bottom: 35px;
 	padding: 10px 42px;
+}
+
+.slider-list {
+	position: absolute;
+	top: 560px;
+	display: flex;
+	padding: 0;
+	margin: 0;
+}
+
+.slider-item {
+	display: block;
+	width: 19px;
+	height: 19px;
+	color: transparent;
+	text-align: center;
+	vertical-align: middle;
+	padding: 0;
+	margin-right: 8px;
+	padding: 0;
+	border: 2px solid #ffffff;
+	border-radius: 50%;
+}
+
+.slider-item-current {
+	background-color: #ffffff;
 }
 
 .banner-list {
@@ -1052,29 +1094,31 @@ a {
 }
 
 .footer-social-item {
-	margin-right: 11px;
+	margin-right: 8px;
 }
 
 .footer-social-link {
 	display: block;
-	width: 38px;
-	height: 38px;
+	width: 32px;
+	height: 32px;
+	margin: 3px;
 	background-repeat: no-repeat; 
+	background-size: cover;
 	opacity: 0.8;
-	border: 3px solid rgba(255, 255, 255, 0.5);
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 	border-radius: 50%;
 }
 
 .footer-social-link:hover,
 .footer-social-link:focus {
 	opacity: 1;
-	border: 3px solid rgba(255, 255, 255, 0.7);
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7);
 }
 
 .footer-social-link:active,
 .footer-social-link:active {
 	opacity: 0.9;
-	border: 3px solid rgba(255, 255, 255, 0.7);
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7);
 }
 
 .social-link-twitter {
@@ -1129,21 +1173,105 @@ a {
 	line-height: 18px;
 }
 
-.modal-feedback {
+.modal {
+	position: fixed;
+	color: #323232;
 	background-color: #f8f7f4;
-	
-	width: 478px;
   border-radius: 10px;
+  z-index: 2;
+}
+
+.modal-feedback {
+	padding: 0;
+	margin: 0;
+	left: 50%;
+	top: 337px;
+	display: none;
+	width: 478px;
+	margin-left: -219px;
+  padding-left: 24px;
+  padding-top: 15px;
+  padding-right: 25px;
 }
 
 .modal-feedback-text {
+	padding: 0;
+	margin: 0;
 	font-size: 24px;
 	line-height: 28px;
 	font-weight: 500;
 }
 
 .feedback-form-field {
-	font-size: 16px;
+	padding: 0;
+	margin: 0;
+	width: 267px;
+	margin-top: 20px;
+	padding-left: 15px;
+	padding-top: 12px;
+	padding-bottom: 8px;
+}
+
+.feedback-form-text {
+	padding: 0;
+	margin: 0;
+	margin-top: 20px;
+	padding-left: 15px;
+	padding-top: 10px;
+	min-height: 155px;
+}
+
+.feedback-form-button {
+	padding: 0;
+	margin: 0;
+	padding: 7px 24px;
+	margin-top: 25px;
+	margin-bottom: 27px; 
+}
+
+.modal-close {
+	position: absolute;
+	top: 16px;
+	right: 17px;
+	width: 18px;
+	height: 17px;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.modal-close::before,
+.modal-close::after {
+	position: absolute;
+	top: 7px;
+	left: -3px;
+	content: "";
+	border: 0;
+	width: 24px;
+	height: 3px;
+	background-color: #231F20;
+}
+
+.modal-close::before {
+	transform: rotate(45deg);
+}
+
+.modal-close::after {
+	transform: rotate(-45deg);
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(50, 50, 50, 0.3);
 }
 
 .breadcrumbs {
