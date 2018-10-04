@@ -146,7 +146,7 @@
       <li class="breadcrumbs-item">
         <a class="link-white breadcrumbs-link" href="#">Каталог</a>
       </li>
-      <li class="breadcrumbs-link">Сливочное</li>
+      <li class="breadcrumbs-item breadcrumbs-link">Сливочное</li>
     </ul>
     <h1 class="page-title">Сливочное мороженое</h1>
 
@@ -155,12 +155,14 @@
       <form class="filters-form" action="https://echo.htmlacademy.ru" method="get">
         <fieldset class="filters-set filter-sort">
           <legend class="filters-name">Сортировка:</legend>
+          <div class="sort-select">
           <select class="sort-list" name="sort">
             <option class="sort-item" value="по популярности" selected>по популярности</option>
             <option class="sort-item" value="сначала недорогие">сначала недорогие</option>
             <option class="sort-item" value="сначала дорогие">сначала дорогие</option>
             <option class="sort-item" value="по жирности">по жирности</option>
-          </select>       
+          </select> 
+          </div>      
         </fieldset>
 
         <fieldset class="filters-set filter-price">
@@ -176,8 +178,8 @@
             <span class="toggle max-toggle"></span>
           </div>
           <p class="visually-hidden">
-            от <input type="number" min="0" max="1000" name="price-from" placeholder="0">
-            до <input type="number" min="0" max="1000" name="price-to" placeholder="1000">
+            от <input type="number" min="0" max="1000" name="price-from" placeholder="0" value="100">
+            до <input type="number" min="0" max="1000" name="price-to" placeholder="1000" value="500">
           </p>
         </fieldset>
 
