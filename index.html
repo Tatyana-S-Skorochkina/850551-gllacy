@@ -117,7 +117,7 @@
     <section class="offer">
       <h2 class="visually-hidden">Акции и предложения</h2>
       <ul class="offer-list">
-        <li class="offer-item offer-item-current">
+        <li class="offer-item offer-background-padua offer-item-current">
           <h3 class="offer-item-title">Крем-брюле и пломбир с малиновым джемом</h3>
           <div class="offer-item-picture">
             <img src="img/slider/creme-brulee-and-raspberry.png" width="1079" height="854" 
@@ -125,7 +125,7 @@
           </div>
           <a class="button offer-item-button" href="#">Давайте оба!</a>
         </li>
-        <li class="offer-item">
+        <li class="offer-item offer-background-balihai">
           <h3 class="offer-item-title">Шоколадный пломбир и лимонный сорбет</h3>
           <div class="offer-item-picture">
             <img src="img/slider/choco-and-lemon.png" width="1079" height="854" 
@@ -133,7 +133,7 @@
           </div>
           <a class="button offer-item-button" href="#">Давайте оба!</a>
         </li>
-        <li class="offer-item">
+        <li class="offer-item offer-background-almondfrost">
           <h3 class="offer-item-title">Пломбир с помадкой <br>и клубничный щербет</h3>
           <div class="offer-item-picture">
             <img src="img/slider/fondant-and-strawberry.png" width="1079" height="854" 
@@ -183,7 +183,7 @@
             <img src="img/catalog/orange.jpg"
             alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
           </div>
-          <p class="price price-preview">310 <span class="price-icon">р</span><span class="weight">/кг</span></p>
+          <p class="price">310 <span class="price-icon">р</span><span class="weight">/кг</span></p>
           <h3 class="products-name">
             <a class="link-white products-link" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
           </h3>
@@ -194,7 +194,7 @@
             <img src="img/catalog/coffee.jpg" 
             alt="Сливочно-кофейное с кусочками шоколада">
           </div>
-          <p class="price price-preview">380 <span class="price-icon">р</span><span class="weight">/кг</span></p>
+          <p class="price">380 <span class="price-icon">р</span><span class="weight">/кг</span></p>
           <h3 class="products-name">
             <a class="link-white products-link" href="#">Сливочно-кофейное с кусочками шоколада</a>
           </h3>
@@ -205,7 +205,7 @@
             <img src="img/catalog/strawberry.jpg" 
             alt="Сливочно-клубничное с присыпкой из белого шоколада">
           </div>
-          <p class="price price-preview">355 <span class="price-icon">р</span><span class="weight">/кг</span></p>
+          <p class="price">355 <span class="price-icon">р</span><span class="weight">/кг</span></p>
           <h3 class="products-name">
             <a class="link-white products-link" href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
           </h3>
@@ -216,7 +216,7 @@
             <img src="img/catalog/caramel.jpg" 
             alt="Сливочное крем-брюле с карамельной подливкой">
           </div>
-          <p class="price price-preview">415 <span class="price-icon">р</span><span class="weight">/кг</span></p>
+          <p class="price">415 <span class="price-icon">р</span><span class="weight">/кг</span></p>
           <h3 class="products-name">
             <a class="link-white products-link" href="#">Сливочное крем-брюле с карамельной подливкой</a>
           </h3>
@@ -356,28 +356,27 @@
     </div>
   </footer>
 
-  <div class="modal modal-feedback">
-    <h2 class="visually-hidden">Обратная связь</h2>
-    <p class="modal-feedback-text">Мы обязательно вам ответим!</p>
-    <form class="modal-feedback-form" action="https://echo.htmlacademy.ru" method="post">
-      <label class="visually-hidden" for="feedback-name">Имя</label>
-      <input class="form-field feedback-form-field" type="text" name="feedback-form-name" 
-      id="feedback-name" placeholder="Как вас зовут?"><br>
-      <label class="visually-hidden" for="feedback-email">Электронная почта</label>
-      <input class="form-field feedback-form-field" type="email" name="feedback-form-email" 
-      id="feedback-email" placeholder="Ваша почта для ответа?"><br>
-      <label class="visually-hidden" for="feedback-comment">Комментарий</label>
-      <textarea class="form-field feedback-form-text" name="feedback-form-comment" 
-      id="feedback-comment" rows="10" placeholder="Напишите что-нибудь..."></textarea><br> 
-      <div class="button-position">
-        <input class="button feedback-form-button" type="submit" value="Отправить" 
-        aria-label="Отправить">
-      </div>
-    </form>
-    <button class="modal-close" type="button">Закрыть</button>
+  <div class="modal-overlay modal-show">
+    <div class="modal modal-feedback">
+      <h2 class="visually-hidden">Обратная связь</h2>
+      <p class="modal-feedback-text">Мы обязательно вам ответим!</p>
+      <form class="modal-feedback-form" action="https://echo.htmlacademy.ru" method="post">
+        <label class="visually-hidden" for="feedback-name">Имя</label>
+        <input class="form-field feedback-form-field" type="text" name="feedback-form-name" 
+        id="feedback-name" placeholder="Как вас зовут?"><br>
+        <label class="visually-hidden" for="feedback-email">Электронная почта</label>
+        <input class="form-field feedback-form-field" type="email" name="feedback-form-email" 
+        id="feedback-email" placeholder="Ваша почта для ответа?"><br>
+        <label class="visually-hidden" for="feedback-comment">Комментарий</label>
+        <textarea class="form-field feedback-form-text" name="feedback-form-comment" 
+        id="feedback-comment" rows="10" placeholder="Напишите что-нибудь..."></textarea><br> 
+        <div class="button-position">
+          <input class="button feedback-form-button" type="submit" value="Отправить" 
+          aria-label="Отправить">
+        </div>
+      </form>
+      <button class="modal-close" type="button">Закрыть</button>
+    </div>
   </div>
-
-  <div class="modal-overlay"></div>
-
 </body>
 </html>

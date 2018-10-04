@@ -38,7 +38,6 @@ a {
 	width: 1200px;
 	padding: 0 27px;
 	padding-top: 9px;
-	padding-bottom: 33px;
 	margin: 0 auto;
 }
 
@@ -481,11 +480,13 @@ a {
 }
 
 .form-field:hover {
-	box-shadow: 0 0 2px 0 rgba(154, 154, 154, 0.52);
+	border: solid 1px rgba(154, 154, 154, 0.52);
+	box-shadow: inset 0 0 0 1px rgba(154, 154, 154, 0.52);
 }
 
 .form-field:focus {
-	box-shadow: 0 0 2px 0 rgba(46, 136, 228, 0.52);
+	border: none;
+	box-shadow: inset 0 0 0 2px rgba(46, 136, 228, 0.52);
 }
 
 .search-form-field,
@@ -498,7 +499,6 @@ a {
 .login-form-field {
 	margin-bottom: 20px;
 }
-
 
 .button {
 	font-size: 18px;
@@ -622,7 +622,15 @@ a {
 	border-radius: 50%;
 }
 
-.slider-item-current {
+.slider-item:hover,
+.slider-item:focus {
+  background-color: rgba(248, 247, 244, 0.4);
+}
+
+.slider-item-current,
+.slider-item-current:hover,
+.slider-item-current:active,
+.slider-item:active {
 	background-color: #ffffff;
 }
 
@@ -834,34 +842,31 @@ a {
 	position: absolute;
 	left: 0;
 	top: 163px;
+	display: flex;
+	align-items: flex-end;
 	font-size: 45px;
 	line-height: 45px;
 	font-weight: 500;
 	color: #ffffff;
+	text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.5);
 }
 
 .price-icon {
-	position: absolute;
-	top: 4px;
-	right: 40px;
-	display: inline-block;
 	width: 31px;
 	height: 36px;
 	font-size: 0;
 	background-image: url("../img/svg/icon-rub.svg");
 	background-repeat: no-repeat;
 	background-position: 0 0;
+	margin: 0;
+	margin-left: 5px;
 }
  
 .weight {
-	display: inline-block;
-	margin-left: 25px;
+	margin: 0;
+	margin-left: 3px;
 	font-size: 30px;
-}
-
-.products-item:hover .price-icon,
-.products-item:focus .price-icon {
-		background-image: url("../img/svg/icon-rub-preview.svg");
+	line-height: 1;
 }
 
 .advantages {
@@ -1056,6 +1061,7 @@ a {
 	padding-left: 25px;
 	padding-right: 15px;
 	padding-top: 30px;
+	padding-bottom: 31px;
 }
 
 .contacts-text {
@@ -1101,6 +1107,7 @@ a {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	border-top: 1px solid rgba(255, 255, 255, 0.3)
 }
 
 .footer-social-list {
@@ -1193,20 +1200,34 @@ a {
 	line-height: 18px;
 }
 
+.modal-overlay { 
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(50, 50, 50, 0.3);
+}
+
+.modal-show {
+	display: none;
+}
+
 .modal {
 	position: fixed;
 	color: #323232;
 	background-color: #f8f7f4;
   border-radius: 10px;
-  z-index: 2;
 }
 
 .modal-feedback {
 	padding: 0;
 	margin: 0;
 	left: 50%;
-	top: 337px;
-	display: none;
+	top: 50%;
+	transform: translateY(-50%);
 	width: 478px;
 	margin-left: -219px;
   padding-left: 24px;
@@ -1281,17 +1302,6 @@ a {
 
 .modal-close::after {
 	transform: rotate(-45deg);
-}
-
-.modal-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1;
-	display: none;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(50, 50, 50, 0.3);
 }
 
 .breadcrumbs {
@@ -1423,7 +1433,7 @@ a {
 }
 
 .filter-checkbox::before {
-	top: -2px;
+	top: -3px;
 	left: -32px;
 	width: 27px;
 	height: 23px;
@@ -1438,12 +1448,15 @@ a {
 }
 
 .filter-checkbox:hover::before,
-.filter-checkbox:focus::before,
 .filter-input:checked + .filter-checkbox:hover::before,
-.filter-input:checked + .filter-checkbox:focus::before {
+.filter-input:focus + .filter-checkbox::before,
+.filter-input:checked:focus + .filter-checkbox::before {
 	opacity: 1;
 }
 
+.filter-checkbox:disabled::before {
+	opacity: 0,4;
+}
 
 .filter-radio::before {
 	top: 0;
@@ -1455,7 +1468,7 @@ a {
 }
 
 .filter-radio:hover::before,
-.filter-radio:focus::before {
+.filter-input:focus + .filter-radio::before {
 	box-shadow: 0 0 0 3px rgba(255, 255, 255, 1);
 }
 
@@ -1469,11 +1482,15 @@ a {
 }
 
 .filter-input:checked + .filter-radio:hover::after,
-.filter-input:checked + .filter-radio:focus::after {
+.filter-input:checked:focus + .filter-radio::after {
 	background-color: rgba(255, 255, 255, 1);
 }
 
-/* Если я правильно поняла, то технически пока нет возможности стилизовать select... */
+.filter-radio:disabled::before,
+.filter-radio:disabled::after {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
 .sort-select {
 	background-color: rgba(255, 255, 255, 0.2);
 	border: none;
@@ -1554,6 +1571,11 @@ a {
 	cursor: pointer;
 }
 
+.toggle:hover,
+.toggle:focus {
+	box-shadow: 0 0 0 1px #ffffff;
+}
+
 .min-toggle {
 	left: 35px;
 }
@@ -1617,6 +1639,7 @@ a {
 .pagination-list {
 	display: flex;
 	justify-content: flex-end;
+	align-items: center;
 
 	padding: 0;
 	margin: 0;
@@ -1668,8 +1691,7 @@ a {
 	border-right: 1px solid #ffffff;
 	transform: rotate(45deg);
 	margin: 0;
-	padding: 0;
-	margin-top: 8px; 
+	padding: 0; 
 }
 
 .pagination-icon:first-child {
