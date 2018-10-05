@@ -1062,6 +1062,7 @@ a {
 	position: relative;
 	min-height: 430px;
 	min-width: 1200px;
+	z-index: 1;
 }
 
 .contacts .container {
