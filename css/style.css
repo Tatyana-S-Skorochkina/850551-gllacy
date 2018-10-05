@@ -1075,6 +1075,8 @@ a {
 
 .contacts-map {
 	position: absolute;
+	top: 0;
+	left: 0;
 	background-color: #e8e1c7;
 	background-image: url("../img/map.jpg");
 	background-repeat: no-repeat;
