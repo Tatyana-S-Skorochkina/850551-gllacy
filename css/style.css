@@ -492,8 +492,7 @@ a {
 .search-form-field,
 .login-form-field {
 	font-size: 14px;
-	padding: 10px 0;
-	padding-left: 15px; 
+	padding: 10px 15px;
 }
 
 .login-form-field {
@@ -1037,18 +1036,10 @@ a {
 	padding: 0;
 	margin: 0;
 	margin: 35px 0;
-	padding-left: 15px;
-	padding-top: 15px;
-	padding-bottom: 13px;
+	padding: 10px 15px;
 	width: 368px;
 	font-size: 16px;
 	line-height: 24px;
-	font-weight: 400;
-	color: #999999;
-
-	border-style: none;
-	border: 1px solid #d3d3d2;
-	border-radius: 3px;
 }
 
 .subscription-button {
@@ -1132,8 +1123,9 @@ a {
 }
 
 .feedback-button {
+	display: block;
 	max-width: 252px;
-	padding: 10px 28px;
+	padding: 10px 27px;
 }
 
 .main-footer {
