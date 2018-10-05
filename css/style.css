@@ -33,11 +33,11 @@ a {
 	background-repeat: no-repeat;
 }
 
-
 .container {
 	width: 1200px;
 	padding: 0 27px;
 	padding-top: 9px;
+	padding-bottom: 33px;
 	margin: 0 auto;
 }
 
@@ -562,6 +562,29 @@ a {
 	display: none;
 }
 
+.offer-item::before {
+	content: "";
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -3;
+}
+
+.offer-background-padua::before {
+	background-color: #849d8f;
+}
+
+.offer-background-balihai::before {
+	background-color: #8996a6;
+}
+
+.offer-background-almondfrost::before {
+	background-color: #9d8b84;
+}
+
 .offer-item-current {
 	display: flex;
 	flex-direction: column;
@@ -1037,25 +1060,32 @@ a {
 
 .contacts {
 	position: relative;
+	min-height: 430px;
+	min-width: 1200px;
+}
+
+.contacts .container {
+	padding: 0 27px;
+	display: flex;
+	min-height: 430px;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 .contacts-map {
+	position: absolute;
 	background-color: #e8e1c7;
 	background-image: url("../img/map.jpg");
 	background-repeat: no-repeat;
-
+	background-size: cover;
 	min-height: 430px;
-	width: 1200px;
-	margin-left: -27px;
+	width: 100%;
+	z-index: -1;
 }
 
 .contacts-info {
-	position: absolute;
-	right: 0;
-	top: 63px;
 	background-color: #ffffff;
 	border-radius: 15px;
-
 	width: 302px;
 	min-height: 305px;
 	padding-left: 25px;
@@ -1107,7 +1137,7 @@ a {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-top: 1px solid rgba(255, 255, 255, 0.3)
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .footer-social-list {
@@ -1212,7 +1242,7 @@ a {
 }
 
 .modal-show {
-	display: none;
+	display: block;
 }
 
 .modal {
