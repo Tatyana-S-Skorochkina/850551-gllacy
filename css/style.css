@@ -1802,7 +1802,13 @@ a {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+
+.filter-sort {
+  margin-right: 14px;
+}
+
 .sort-select {
+  position: relative;
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
   border-radius: 20px;
@@ -1812,6 +1818,19 @@ a {
   padding-bottom: 5px;
   padding-right: 15px;
   vertical-align: middle;
+}
+
+.sort-select::after {
+  position: absolute;
+  display: block;
+  top: 13px;
+  right: 15px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid #ffffff;
+  border-left: 5.5px solid rgba(255, 255, 255, 0);
+  border-right: 5.5px solid rgba(255, 255, 255, 0);
 }
 
 .sort-list {
@@ -1837,23 +1856,14 @@ a {
   display: none;
 }
 
-.sort-arrow {
-  padding: 0;
-  margin: 0;
-}
-
-.filter-sort {
-  margin-right: 14px;
-}
-
 .sort-select:hover .sort-list,
 .sort-select:focus .sort-list {
   color: #323232;
 }
 
-.sort-select:hover .sort-arrow,
-.sort-select:focus .sort-arrow {
-  fill: #323232;
+.sort-select:hover::after,
+.sort-select:focus::after {
+  border-top: 10px solid #323232;
 }
 
 .sort-item {
